@@ -6,7 +6,9 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - ./data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    command: [--auth]
     environment:
+      MONGO_INITDB_DATABASE: sleepr
       MONGO_INITDB_ROOT_USERNAME: monguser
-      MONGO_INITDB_ROOT_PASSWORD: monguser
+      MONGO_INITDB_ROOT_PASSWORD: mongpass
