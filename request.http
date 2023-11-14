@@ -1,8 +1,9 @@
-@host=http://localhost:3000
+@reservation=http://localhost:3000
+@auth=http://localhost:3001
 ###
-GET {{host}}
+GET {{reservation}}
 ###
-POST {{host}}/reservations
+POST {{reservation}}/reservations
 Content-Type: application/json
 
 {
@@ -12,8 +13,15 @@ Content-Type: application/json
   "invoiceId":"493"
 }
 ###
-GET {{host}}/reservations
+GET {{reservation}}/reservations
 ###
-GET {{host}}/reservations/6552b7e004d3531dfd9fdd20
+GET {{reservation}}/reservations/6552b7e004d3531dfd9fdd20
 ###
-DELETE {{host}}/reservations/6552b730151d894ae9179de5
+DELETE {{reservation}}/reservations/6552b730151d894ae9179de5
+###
+POST {{auth}}/users
+Content-Type: application/json
+
+{
+  "email":"what"
+}
