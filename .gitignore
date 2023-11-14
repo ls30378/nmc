@@ -1,5 +1,6 @@
 # compiled output
 /data
+/database-data
 /dist
 /node_modules
 

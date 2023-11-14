@@ -1,7 +1,6 @@
-db = db.getSiblingDB('sleepr');
 db.createUser({
-  user: 'monguser',
-  pwd: 'mongpass',
+  user: 'what',
+  pwd: 'who',
   roles: [
     {
       role: 'readWrite',

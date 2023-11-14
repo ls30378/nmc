@@ -1,14 +1,14 @@
-version: '3'
+version: '3.8'
+
 services:
   mongodb:
     image: mongo:latest
-    container_name: my-mongodb
+    container_name: mongodb
     ports:
       - '27017:27017'
     volumes:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    command: [--auth]
     environment:
-      MONGO_INITDB_DATABASE: sleepr
-      MONGO_INITDB_ROOT_USERNAME: monguser
-      MONGO_INITDB_ROOT_PASSWORD: mongpass
+      MONGO_INITDB_ROOT_USERNAME: what
+      MONGO_INITDB_ROOT_PASSWORD: who
+    command: ['--auth']

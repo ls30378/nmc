@@ -1,3 +1,19 @@
 @host=http://localhost:3000
 ###
 GET {{host}}
+###
+POST {{host}}/reservations
+Content-Type: application/json
+
+{
+  "startDate":"12/20/2022",
+  "endDate":"12/22/2022",
+  "placeId":"12345",
+  "invoiceId":"493"
+}
+###
+GET {{host}}/reservations
+###
+GET {{host}}/reservations/6552b7e004d3531dfd9fdd20
+###
+DELETE {{host}}/reservations/6552b730151d894ae9179de5
