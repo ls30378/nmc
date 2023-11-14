@@ -23,5 +23,14 @@ POST {{auth}}/users
 Content-Type: application/json
 
 {
-  "email":"what"
+  "email":"lorentsh@gmail.com",
+  "password":"Qwer1234."
+}
+###
+POST {{auth}}/login
+Content-Type: application/json
+
+{
+  "email":"lorentsh@gmail.com",
+  "password":"Qwer1234."
 }
