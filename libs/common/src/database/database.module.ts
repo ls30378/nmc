@@ -4,14 +4,14 @@ import { ModelDefinition, MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://what:who@localhost:27017/sleepr'),
-    // MongooseModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   useFactory: async (configService: ConfigService) => ({
-    //     uri: configService.get('MONGODB_URI'),
+    MongooseModule.forRoot('mongodb://mongo:27017/sleepr'),
+    //   MongooseModule.forRootAsync({
+    //     imports: [ConfigModule],
+    //     useFactory: async (configService: ConfigService) => ({
+    //       uri: configService.get('MONGODB_URI'),
+    //     }),
+    //     inject: [ConfigService],
     //   }),
-    //   inject: [ConfigService],
-    // }),
   ],
 })
 export class DatabaseModule {
