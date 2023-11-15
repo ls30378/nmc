@@ -34,3 +34,6 @@ Content-Type: application/json
   "email":"lorentsh@gmail.com",
   "password":"Qwer1234."
 }
+
+###
+GET {{auth}}/users
