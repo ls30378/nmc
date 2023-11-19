@@ -30,7 +30,7 @@ services:
       target: development
     command: yarn start:dev payments
     ports:
-      - '3001:3001'
+      - '3003:3003'
     volumes:
       - .:/usr/src/app
     env_file:
