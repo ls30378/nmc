@@ -9,7 +9,7 @@ Content-Type: application/json
 {
   "startDate":"12/20/2022",
   "endDate":"12/22/2022",
-  "placeId":"12345",
+  "placeId":"123456",
   "invoiceId":"493"
 }
 ###
