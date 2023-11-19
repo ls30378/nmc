@@ -15,7 +15,7 @@ export class PaymentsService {
   async createCharge({ card, amount }: CreateChargeDTO) {
     const paymentMethod = await this.stripe.paymentMethods.create({
       type: 'card',
-      card,
+      card: { token: 'tok_visa' },
     });
 
     const paymentIntent = await this.stripe.paymentIntents.create({
@@ -23,6 +23,7 @@ export class PaymentsService {
       amount: amount * 100,
       confirm: true,
       payment_method_types: ['card'],
+
       currency: 'usd',
     });
 
