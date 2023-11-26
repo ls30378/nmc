@@ -29,8 +29,6 @@ services:
       dockerfile: ./apps/payments/Dockerfile
       target: development
     command: yarn start:dev payments
-    ports:
-      - '3003:3003'
     volumes:
       - .:/usr/src/app
     env_file:
@@ -38,14 +36,12 @@ services:
   notifications:
     build:
       context: .
-      dockerfile: ./apps/payments/Dockerfile
+      dockerfile: ./apps/notifications/Dockerfile
       target: development
-    command: yarn start:dev payments
-    ports:
-      - '3004:3004'
+    command: yarn start:dev notifications
     volumes:
       - .:/usr/src/app
     env_file:
-      - ./apps/payments/.env
+      - ./apps/notifications/.env
   mongo:
     image: mongo

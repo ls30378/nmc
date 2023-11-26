@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { NotifyEmailDTO } from './dto/notify-email.dto';
 
 @Injectable()
 export class NotificationsService {
-  getHello(): string {
-    return 'Hello World!';
+  notifyEmail(data: NotifyEmailDTO) {
+    console.log(data.email);
   }
 }
