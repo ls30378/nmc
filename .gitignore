@@ -1,3 +1,4 @@
+.env
 # compiled output
 /data
 /database-data
@@ -35,3 +36,5 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+apps/notifications/.env
