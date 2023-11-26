@@ -10,17 +10,14 @@ export class NotificationsService {
   private readonly transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      type: 'OAuth2',
-      user: this.configService.get('SMTP_USER'),
-      clientId: this.configService.get('GOOGLE_OAUTH_CLIENT_ID'),
-      clientSecret: this.configService.get('GOOGLE_OAUTH_CLIENT_SECRET'),
-      refreshToken: this.configService.get('GOOGLE_OAUTH_REFRESH_TOKEN'),
+      user: this.configService.get('MAIL_USER'),
+      pass: this.configService.get('MAIL_PASSWORD'),
     },
   });
 
   async notifyEmail(data: NotifyEmailDTO) {
     await this.transporter.sendMail({
-      from: this.configService.get('SMTP_USER'),
+      from: this.configService.get('MAIL_USER'),
       to: data.email,
       subject: 'Notification',
       text: 'text',
