@@ -35,5 +35,17 @@ services:
       - .:/usr/src/app
     env_file:
       - ./apps/payments/.env
+  notifications:
+    build:
+      context: .
+      dockerfile: ./apps/payments/Dockerfile
+      target: development
+    command: yarn start:dev payments
+    ports:
+      - '3004:3004'
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - ./apps/payments/.env
   mongo:
     image: mongo
