@@ -6,10 +6,13 @@ COPY package.json ./
 
 COPY yarn.lock ./
 
+COPY tsconfig.json tsconfig.json
+
 RUN yarn
 
-COPY . .
-
+COPY apps/payments apps/payments
+COPY libs libs
+RUN cd apps/payments && yarn
 RUN yarn build
 
 FROM node:alpine as production
